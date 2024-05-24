@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <main className="">
       <Navbar />
+      
       <Counter/>
 
       <div className="m-5 w-60">

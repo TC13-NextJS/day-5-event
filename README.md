@@ -1,5 +1,3 @@
-![web](./public/personal-web.png)
-
 ## Styling with 
 - tailwind
 - shadcn

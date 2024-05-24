@@ -27,12 +27,12 @@ function Todo() {
 
   return (
     <div>
-      <form action="" className="flex flex-row">
+      <form action="" className="flex flex-row gap-2">
         <Input type="text" placeholder="input your todo.." value={inputTodo} onChange={handleInput}  />
         <Button onClick={addTodo}>Add</Button>
       </form>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-4 mt-5">
         {/* <span>{todo[0]}</span>
         <span>{todo[1]}</span>
         <span>{todo[2]}</span> */}
