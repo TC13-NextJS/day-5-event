@@ -1,48 +1,45 @@
-'use client'
+"use client";
 
-import { useState } from "react"
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
-function Todo() {
-  const [inputTodo, setInputTodo] = useState("")
+export default function Todo() {
+  const [inputTodo, setInputTodo] = useState("");
   const [todo, setTodo] = useState([
     "belajar nextJS",
     "nyoba buat todo",
-    "belajar event handler"
-  ])
+    "belajar event handler",
+  ]);
 
-  function handleInput (e: any) {
-    setInputTodo(e.target.value)
+  function handleInput(e: any) {
+    setInputTodo(e.target.value);
   }
 
-  function addTodo (e: any) {
-    e.preventDefault()
-    setTodo([
-      ...todo, inputTodo
-    ])
+  function addTodo(e: any) {
+    e.preventDefault();
+    setTodo([...todo, inputTodo]);
 
-    setInputTodo("")
+    setInputTodo("");
   }
 
   return (
     <div>
       <form action="" className="flex flex-row gap-2">
-        <Input type="text" placeholder="input your todo.." value={inputTodo} onChange={handleInput}  />
+        <Input
+          type="text"
+          placeholder="input your todo.."
+          value={inputTodo}
+          onChange={handleInput}
+        />
         <Button onClick={addTodo}>Add</Button>
       </form>
 
-      <div className="flex flex-col gap-4 mt-5">
-        {/* <span>{todo[0]}</span>
-        <span>{todo[1]}</span>
-        <span>{todo[2]}</span> */}
-
+      <div className="mt-5 flex flex-col gap-4">
         {todo.map((item, index) => (
           <span key={index}>{item}</span>
         ))}
       </div>
     </div>
-  )
+  );
 }
-
-export default Todo
